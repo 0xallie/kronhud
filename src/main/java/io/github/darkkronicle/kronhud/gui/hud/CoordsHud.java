@@ -32,20 +32,16 @@ public class CoordsHud extends TextHudEntry implements DynamicallyPositionable {
 
     public static String getZDir(int dir) {
         return switch (dir) {
-            case 5 -> "++";
-            case 4, 6 -> "+";
-            case 8, 2 -> "-";
-            case 1 -> "--";
+            case 4, 5, 6 -> "+";
+            case 1, 2, 8 -> "-";
             default -> "";
         };
     }
 
     public static String getXDir(int dir) {
         return switch (dir) {
-            case 3 -> "++";
-            case 2, 4 -> "+";
-            case 6, 8 -> "-";
-            case 7 -> "--";
+            case 2, 3, 4 -> "+";
+            case 6, 7, 8 -> "-";
             default -> "";
         };
     }
