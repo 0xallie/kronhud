@@ -9,7 +9,6 @@
     "MixinLivingEntity",
     "AccessorMinecraftClient",
     "MixinBossBarHud",
-    "MixinClientPlayerEntity",
     "MixinEntity",
     "MixinInGameHud",
     "MixinKeybind",
