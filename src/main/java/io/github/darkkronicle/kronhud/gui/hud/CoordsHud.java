@@ -10,6 +10,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.MathHelper;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -176,11 +177,31 @@ public class CoordsHud extends TextHudEntry implements DynamicallyPositionable {
                     pos.x() + 1, pos.y() + 22,
                     firstColor.getValue().color(), shadow.getValue()
             );
-
             drawString(
                     context, textRenderer, Text.literal(df.format(z)), pos.x() + 11, pos.y() + 22, secondColor.getValue().color(),
                     shadow.getValue()
             );
+
+            drawString(
+                    context, textRenderer, Text.literal("Yaw"),
+                    pos.x() + 1, pos.y() + 37,
+                    firstColor.getValue().color(), shadow.getValue()
+            );
+            drawString(
+                    context, textRenderer, Text.literal(df.format((MathHelper.wrapDegrees(client.player.getYaw())))), pos.x() + 31, pos.y() + 37, secondColor.getValue().color(),
+                    shadow.getValue()
+            );
+
+            drawString(
+                    context, textRenderer, Text.literal("Pitch"),
+                    pos.x() + 1, pos.y() + 47,
+                    firstColor.getValue().color(), shadow.getValue()
+            );
+            drawString(
+                    context, textRenderer, Text.literal(df.format(client.player.getPitch())), pos.x() + 31, pos.y() + 47, secondColor.getValue().color(),
+                    shadow.getValue()
+            );
+
 
             drawString(
                     context, textRenderer, direction,
@@ -204,7 +225,7 @@ public class CoordsHud extends TextHudEntry implements DynamicallyPositionable {
                 changed = true;
             }
             if (getHeight() != 31) {
-                setHeight(31);
+                setHeight(51);
                 changed = true;
             }
             if (changed) {
