@@ -10,6 +10,7 @@
     "AccessorMinecraftClient",
     "MixinBossBarHud",
     "MixinClientPlayerEntity",
+    "MixinDebugHud",
     "MixinEntity",
     "MixinInGameHud",
     "MixinKeybind",
